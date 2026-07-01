@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Activities & Fellowship Events - MFC KIM</title>
+    <meta name="description" content="Explore upcoming fellowship events, worship nights, youth retreats, and community outreach gatherings at MFC KIM Church.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-cross">✝</div>
+                <div class="brand-text">
+                    <span class="brand-title">MFC KIM</span>
+                    <span class="brand-subtitle">Church Sanctuary</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="pastor.html" class="nav-link">Pastor's Letter</a></li>
+                <li><a href="songs.html" class="nav-link">Song Lyrics</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="blog.html" class="nav-link">Blogs</a></li>
+                <li><a href="files.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-cta">Visit Us</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="hero-section" style="min-height: 40vh; background: linear-gradient(135deg, rgba(44, 30, 20, 0.9), rgba(122, 40, 40, 0.8)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1920&q=80') center/cover;">
+        <div class="hero-content">
+            <span class="hero-badge">Fellowship & Outreach</span>
+            <h1 class="hero-title">Church Activities & Events</h1>
+            <p class="hero-subtitle">"Gathering together to worship, serve our neighbors, and strengthen the bonds of brotherhood."</p>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Community Life</span>
+                <h2 class="section-title">Join Our Next Fellowship Gathering</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">We host a variety of worship galas, youth retreats, and community food drives throughout the year.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tab-container">
+                <button class="tab-btn active" data-filter="upcoming">📅 Upcoming Gatherings</button>
+                <button class="tab-btn" data-filter="past">📜 Past Events Archive</button>
+            </div>
+            
+            <div class="grid-3" id="activities-grid">
+                <!-- Populated dynamically via js/pages/activities.js -->
+                <div class="content-card"><div class="card-body"><p>Loading church activities...</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <div id="shared-footer"></div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/pages/activities.js"></script>
+</body>
+</html>

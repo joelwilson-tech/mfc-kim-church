@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Dashboard - MFC KIM Church</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+</head>
+<body class="admin-body">
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="sidebar-header">
+                <div style="font-size: 28px; color: var(--admin-gold);">✝</div>
+                <div>
+                    <a href="dashboard.html" class="sidebar-brand">MFC KIM</a>
+                    <span style="font-size: 11px; display: block; color: rgba(255,255,255,0.5); text-transform: uppercase;">Admin Portal</span>
+                </div>
+            </div>
+            
+            <ul class="sidebar-nav">
+                <li><a href="#settings" class="sidebar-link active" data-target="panel-settings">⚙️ Site Settings & Pastor</a></li>
+                <li><a href="#schedule" class="sidebar-link" data-target="panel-schedule">⛪ Worship Schedule</a></li>
+                <li><a href="#messages" class="sidebar-link" data-target="panel-messages">💬 Inquiries & Messages <span id="msg-badge-count" class="badge badge-warning" style="margin-left: auto;">0</span></a></li>
+                <li><a href="#blogs" class="sidebar-link" data-target="panel-blogs">✍️ Blogs Manager</a></li>
+                <li><a href="#activities" class="sidebar-link" data-target="panel-activities">📅 Activities & Events</a></li>
+                <li><a href="#gallery" class="sidebar-link" data-target="panel-gallery">📸 Photo Gallery</a></li>
+                <li><a href="#songs" class="sidebar-link" data-target="panel-songs">🎵 Song Lyrics Manager</a></li>
+                <li><a href="#files" class="sidebar-link" data-target="panel-files">📁 Files & Resources</a></li>
+                <li><a href="#members" class="sidebar-link" data-target="panel-members">👥 Leadership Directory</a></li>
+                <li><a href="#seed" class="sidebar-link" data-target="panel-seed" style="color: var(--admin-gold); border-top: 1px solid rgba(255,255,255,0.1); margin-top: 10px;">⚡ Seed Demo Data</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn-logout">🚪 Sign Out</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <div class="admin-topbar">
+                <div class="admin-title">
+                    <h1 id="panel-title-display">⚙️ Site Settings & Pastor's Letter</h1>
+                    <p id="panel-desc-display">Manage church address, weekly service times, and pastoral greeting.</p>
+                </div>
+                <div>
+                    <a href="../index.html" target="_blank" class="btn-admin btn-admin-gold">🌐 View Public Website</a>
+                </div>
+            </div>
+
+            <!-- PANEL 1: Site Settings & Pastor Message -->
+            <section id="panel-settings" class="admin-section active">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>Sanctuary Contact & Pastor's Message</h2>
+                    </div>
+                    <form id="form-site-settings" onsubmit="return false;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <div>
+                                <label style="display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px;">Church Physical Address</label>
+                                <input type="text" id="set-address" class="form-control" style="width: 100%; padding: 10px; border: 1px solid var(--admin-border); border-radius: 6px;" required>
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px;">Church Phone Number</label>
+                                <input type="text" id="set-phone" class="form-control" style="width: 100%; padding: 10px; border: 1px solid var(--admin-border); border-radius: 6px;" required>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <div>
+                                <label style="display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px;">Contact Email Address</label>
+                                <input type="email" id="set-email" class="form-control" style="width: 100%; padding: 10px; border: 1px solid var(--admin-border); border-radius: 6px;" required>
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px;">Pastor Photo URL</label>
+                                <input type="url" id="set-pastor-photo" class="form-control" style="width: 100%; padding: 10px; border: 1px solid var(--admin-border); border-radius: 6px; margin-bottom: 8px;">
+                                <label style="display: block; font-weight: 600; font-size: 12px; margin-bottom: 4px; color: var(--admin-gold);">Or Upload New Photo</label>
+                                <input type="file" id="set-pastor-photo-file" accept="image/*" style="font-size: 12px; width: 100%;">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px;">About Church Summary (Footer & About Page)</label>
+                            <textarea id="set-about" rows="3" style="width: 100%; padding: 10px; border: 1px solid var(--admin-border); border-radius: 6px; font-family: inherit;"></textarea>
+                        </div>
+
+                        <div style="margin-bottom: 24px;">
+                            <label style="display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px;">Senior Pastor's Message Letter</label>
+                            <textarea id="set-pastor-msg" rows="6" style="width: 100%; padding: 10px; border: 1px solid var(--admin-border); border-radius: 6px; font-family: inherit;" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-admin btn-admin-primary">💾 Save All Settings to Firestore</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- PANEL 2: Inquiries & Messages -->
+            <section id="panel-messages" class="admin-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>Sanctuary Contact Inquiries</h2>
+                        <button class="btn-admin btn-admin-gold btn-sm" id="btn-refresh-messages">🔄 Refresh Inbox</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Sender Name</th>
+                                    <th>Subject / Topic</th>
+                                    <th>Contact Info</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-messages-body">
+                                <tr><td colspan="6" style="text-align: center;">Loading inbox...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 3: Blogs Manager -->
+            <section id="panel-blogs" class="admin-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>Church Ministry Articles</h2>
+                        <button class="btn-admin btn-admin-primary" id="btn-add-blog">➕ Write New Devotional</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Cover</th>
+                                    <th>Article Title</th>
+                                    <th>Author</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-blogs-body">
+                                <tr><td colspan="6" style="text-align: center;">Loading blogs...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 4: Activities & Events -->
+            <section id="panel-activities" class="admin-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>Fellowship Events & Activities</h2>
+                        <button class="btn-admin btn-admin-primary" id="btn-add-activity">➕ Schedule New Event</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Event Title</th>
+                                    <th>Date & Time</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-activities-body">
+                                <tr><td colspan="5" style="text-align: center;">Loading activities...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 5: Gallery Manager -->
+            <section id="panel-gallery" class="admin-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>Sanctuary Photo Archive</h2>
+                        <button class="btn-admin btn-admin-primary" id="btn-add-gallery">➕ Upload New Photograph</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Thumbnail</th>
+                                    <th>Caption</th>
+                                    <th>Category</th>
+                                    <th>Uploaded</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-gallery-body">
+                                <tr><td colspan="5" style="text-align: center;">Loading gallery...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 6: Songs Manager -->
+            <section id="panel-songs" class="admin-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>Sacred Song Lyrics Library</h2>
+                        <button class="btn-admin btn-admin-primary" id="btn-add-song">➕ Add Song Sheet</button>
+                    </div>
+                    <p style="font-size: 13px; color: var(--admin-muted); margin-bottom: 16px;">
+                        Upload sacred hymns, choir specials, or contemporary worship sheet music in PDF format to make them available for download.
+                    </p>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Song Title</th>
+                                    <th>Category</th>
+                                    <th>PDF Document</th>
+                                    <th>Date Added</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-songs-body">
+                                <tr><td colspan="5" style="text-align: center;">Loading song lyrics...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 7: Files & Resources Manager -->
+            <section id="panel-files" class="admin-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>Downloadable Bulletins & Guides</h2>
+                        <button class="btn-admin btn-admin-primary" id="btn-add-file">➕ Upload New PDF Resource</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Document Title</th>
+                                    <th>Category</th>
+                                    <th>File Size / Type</th>
+                                    <th>Uploaded</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-files-body">
+                                <tr><td colspan="5" style="text-align: center;">Loading file resources...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 8: Members & Leadership Directory -->
+            <section id="panel-members" class="admin-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>Leadership Directory Profiles</h2>
+                        <button class="btn-admin btn-admin-primary" id="btn-add-member">➕ Add Leadership Profile</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Order</th>
+                                    <th>Photo</th>
+                                    <th>Name</th>
+                                    <th>Role / Title</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-members-body">
+                                <tr><td colspan="5" style="text-align: center;">Loading leadership directory...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL: Worship Schedule Manager -->
+            <section id="panel-schedule" class="admin-section">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h2>⛪ Weekly Worship Gatherings</h2>
+                        <button class="btn-admin btn-admin-gold btn-sm" id="btn-add-schedule">➕ Add Schedule Card</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 80px; text-align: center;">Icon</th>
+                                    <th>Service Name</th>
+                                    <th>Time / Day</th>
+                                    <th style="width: 140px; text-align: center;">Reorder</th>
+                                    <th style="width: 150px; text-align: center;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-schedule-body">
+                                <!-- Loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL 9: Seed Demo Data Tool -->
+            <section id="panel-seed" class="admin-section">
+                <div class="panel-card" style="border-top: 4px solid var(--admin-gold);">
+                    <div class="panel-header">
+                        <h2>⚡ Seed Demo Data to Firestore</h2>
+                    </div>
+                    <div style="line-height: 1.8; color: var(--admin-text); max-width: 800px;">
+                        <p style="margin-bottom: 16px;">
+                            Have you just configured your Firebase API keys in <code>js/firebase-config.js</code>? Your cloud database starts out empty!
+                        </p>
+                        <p style="margin-bottom: 24px; color: var(--admin-muted);">
+                            By clicking the button below, we will automatically populate your live Firebase Firestore database with default empty structures or complete seeded metadata for MFC KIM.
+                        </p>
+                        <div style="padding: 16px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; margin-bottom: 24px;">
+                            ⚠️ <strong>Note:</strong> This action will insert default sample records into your active Firestore collections so you can immediately see live data on your public pages.
+                        </div>
+                        <button id="btn-seed-firestore" class="btn-admin btn-admin-gold" style="padding: 14px 28px; font-size: 16px;">
+                            🚀 Seed Complete Demo Data Now
+                        </button>
+                        <div id="seed-status" style="margin-top: 20px; font-weight: 600;"></div>
+                    </div>
+                </div>
+
+                <div class="panel-card" style="border-top: 4px solid var(--admin-danger); margin-top: 30px;">
+                    <div class="panel-header">
+                        <h2 style="color: var(--admin-danger);">⚠️ Danger Zone: Reset Database</h2>
+                    </div>
+                    <div style="line-height: 1.8; color: var(--admin-text); max-width: 800px;">
+                        <p style="margin-bottom: 16px;">
+                            This action will permanently delete all records from every Firestore collection (blogs, activities, gallery, leadership profiles, song sheets, documents, and messages).
+                        </p>
+                        <p style="margin-bottom: 24px; color: var(--admin-muted);">
+                            Site Settings will be preserved, but all dynamic site content will be wiped. This action cannot be undone.
+                        </p>
+                        <button id="btn-clear-firestore" class="btn-admin btn-admin-danger" style="padding: 14px 28px; font-size: 16px; background: var(--admin-danger); color: #fff;">
+                            🗑️ Delete All Firestore Data & Clean Reset
+                        </button>
+                        <div id="clear-status" style="margin-top: 20px; font-weight: 600;"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- GLOBAL ADMIN EDIT MODAL -->
+    <div id="admin-modal" class="admin-modal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="modal-title">Edit Record</h3>
+                <button class="modal-close" id="btn-close-modal">&times;</button>
+            </div>
+            <form id="admin-modal-form" onsubmit="return false;">
+                <div class="modal-body" id="modal-form-fields">
+                    <!-- Dynamic form fields inserted via JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-admin" id="btn-cancel-modal" style="background: var(--admin-border); color: var(--admin-text);">Cancel</button>
+                    <button type="submit" class="btn-admin btn-admin-primary">💾 Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MESSAGE READER MODAL -->
+    <div id="msg-modal" class="admin-modal">
+        <div class="modal-dialog" style="max-width: 550px;">
+            <div class="modal-header">
+                <h3>💬 Inquiry Details</h3>
+                <button class="modal-close" id="btn-close-msg-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="msg-modal-content" style="line-height: 1.8;">
+                <!-- Message details -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-admin btn-admin-primary" id="btn-close-msg-modal-footer">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script type="module" src="../js/admin/dashboard.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Lyrics & Sacred Hymns - MFC KIM</title>
+    <meta name="description" content="Explore our library of traditional hymns, contemporary worship songs, and choir lyrics used at MFC KIM. Download PDF song sheets for worship.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-cross">✝</div>
+                <div class="brand-text">
+                    <span class="brand-title">MFC KIM</span>
+                    <span class="brand-subtitle">Church Sanctuary</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="pastor.html" class="nav-link">Pastor's Letter</a></li>
+                <li><a href="songs.html" class="nav-link">Song Lyrics</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="blog.html" class="nav-link">Blogs</a></li>
+                <li><a href="files.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-cta">Visit Us</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="hero-section" style="min-height: 40vh; background: linear-gradient(135deg, rgba(44, 30, 20, 0.9), rgba(122, 40, 40, 0.8)), url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1920&q=80') center/cover;">
+        <div class="hero-content">
+            <span class="hero-badge">Praise & Thanksgiving</span>
+            <h1 class="hero-title">Song Lyrics & Hymns</h1>
+            <p class="hero-subtitle">"Sing unto him a new song; play skillfully with a loud noise." — Psalm 33:3</p>
+        </div>
+    </section>
+
+    <!-- Songs Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Lyric Library</span>
+                <h2 class="section-title">sacred Music Directory</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Search or filter our collection of hymns and worship song sheets. View or download the PDF sheets to sing along.</p>
+                <div style="margin-top: 24px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    <input type="text" id="song-search" class="form-control" placeholder="🔍 Search songs by title or category..." style="border-radius: 30px; text-align: center; border: 1.5px solid var(--border-light); background: var(--bg-parchment);">
+                </div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="tab-container" id="song-filters" style="margin-bottom: 40px;">
+                <button class="tab-btn active" data-category="All">🌟 All Songs</button>
+                <button class="tab-btn" data-category="Hymn">📜 Hymns</button>
+                <button class="tab-btn" data-category="Worship">🙏 Worship Songs</button>
+                <button class="tab-btn" data-category="Choir">👥 Choir Specials</button>
+            </div>
+            
+            <div class="grid-3" id="songs-grid">
+                <!-- Populated dynamically via js/pages/songs.js -->
+                <div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">Loading song lyrics...</div>
+            </div>
+
+            <!-- Pagination Navigation -->
+            <div id="songs-pagination" style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 48px; flex-wrap: wrap;">
+                <button id="btn-prev-page" class="btn btn-secondary btn-sm" style="border-radius: 20px; font-weight: 600; padding: 10px 24px; min-width: 100px;">
+                    ◀ Previous
+                </button>
+                <span id="page-indicator" style="font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--wood-dark); min-width: 120px; text-align: center;">
+                    Page 1 of 1
+                </span>
+                <button id="btn-next-page" class="btn btn-secondary btn-sm" style="border-radius: 20px; font-weight: 600; padding: 10px 24px; min-width: 100px;">
+                    Next ▶
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <div id="shared-footer"></div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/pages/songs.js"></script>
+</body>
+</html>

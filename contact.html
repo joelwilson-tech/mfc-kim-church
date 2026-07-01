@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Visit Us - MFC KIM Church</title>
+    <meta name="description" content="Reach out to our pastoral office, request prayer, ask questions about service timings, or plan your visit to MFC KIM Church.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-cross">✝</div>
+                <div class="brand-text">
+                    <span class="brand-title">MFC KIM</span>
+                    <span class="brand-subtitle">Church Sanctuary</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="pastor.html" class="nav-link">Pastor's Letter</a></li>
+                <li><a href="songs.html" class="nav-link">Song Lyrics</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="blog.html" class="nav-link">Blogs</a></li>
+                <li><a href="files.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-cta">Visit Us</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="hero-section" style="min-height: 40vh; background: linear-gradient(135deg, rgba(44, 30, 20, 0.9), rgba(122, 40, 40, 0.8)), url('https://images.unsplash.com/photo-1548625361-16a00e572049?auto=format&fit=crop&w=1920&q=80') center/cover;">
+        <div class="hero-content">
+            <span class="hero-badge">We Are Here For You</span>
+            <h1 class="hero-title">Connect & Contact Us</h1>
+            <p class="hero-subtitle">"Whether you have a prayer request, a question about our worship, or need pastoral counsel, please reach out."</p>
+        </div>
+    </section>
+
+    <!-- Contact Grid Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Info Card -->
+                <div class="contact-info-card">
+                    <h3>Sanctuary Information</h3>
+                    <p style="color: var(--text-light-muted); margin-bottom: 30px; font-size: 16px;">
+                        Our doors are open throughout the week for counseling, prayer, and community fellowship.
+                    </p>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>Physical Address</h4>
+                            <p id="contact-address">1244 Heritage Sanctuary Road, Community District, Central City</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4>Church Office Phone</h4>
+                            <p id="contact-phone">+1 (555) 384-9200</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-text">
+                            <h4>Email Enquiries</h4>
+                            <p id="contact-email">info@mfckim.org</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🕒</div>
+                        <div class="info-text">
+                            <h4>Office Hours</h4>
+                            <p>Monday – Friday: 9:00 AM – 4:00 PM<br>Saturday: 10:00 AM – 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="font-size: 26px; color: var(--wood-dark); margin-bottom: 10px;">Send a Message to Our Team</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 26px; font-size: 15px;">
+                        All submissions are securely saved and reviewed by our pastoral team via our online dashboard.
+                    </p>
+
+                    <form id="inquiry-form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label class="form-label" for="sender-name">Your Full Name *</label>
+                            <input type="text" id="sender-name" class="form-control" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-email">Email Address *</label>
+                            <input type="email" id="sender-email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-phone">Phone Number (Optional)</label>
+                            <input type="tel" id="sender-phone" class="form-control" placeholder="+1 (555) 000-0000">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-subject">Subject / Purpose *</label>
+                            <select id="sender-subject" class="form-control" required>
+                                <option value="">Select an inquiry subject...</option>
+                                <option value="Prayer Request">🙏 Prayer Request</option>
+                                <option value="Plan a Visit / Service Times">⛪ Plan a Visit / Service Timings</option>
+                                <option value="Pastoral Counseling">🕊️ Pastoral Counseling</option>
+                                <option value="Community Outreach Volunteer">🤝 Community Outreach / Food Pantry</option>
+                                <option value="General Question">❔ General Question</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-message">Your Message or Request *</label>
+                            <textarea id="sender-message" class="form-control" placeholder="Please let us know how we can pray for you or assist you..." required></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">
+                            ✉️ Submit Message to Sanctuary Office
+                        </button>
+
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <div id="shared-footer"></div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/pages/contact.js"></script>
+</body>
+</html>

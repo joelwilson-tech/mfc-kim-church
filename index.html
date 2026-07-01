@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFC KIM - Warm & Traditional Church Sanctuary</title>
+    <meta name="description" content="Welcome home to MFC KIM Church. A warm, traditional Christian fellowship dedicated to worship, community stewardship, and scriptural truth.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-cross">✝</div>
+                <div class="brand-text">
+                    <span class="brand-title">MFC KIM</span>
+                    <span class="brand-subtitle">Church Sanctuary</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="pastor.html" class="nav-link">Pastor's Letter</a></li>
+                <li><a href="songs.html" class="nav-link">Song Lyrics</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="blog.html" class="nav-link">Blogs</a></li>
+                <li><a href="files.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-cta">Visit Us</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="hero-badge">Welcome Home To Our Fellowship</span>
+            <h1 class="hero-title">A Sanctuary of Grace, Faith & Tradition</h1>
+            <p class="hero-subtitle">"Where the enduring truth of Scripture meets the genuine warmth of family. Join us as we worship together in spirit and in truth."</p>
+            <div class="hero-actions">
+                <a href="#service-times" class="btn btn-primary">Service Timings</a>
+                <a href="songs.html" class="btn btn-secondary">Sing Praise</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Verse of the Day Card -->
+    <section class="daily-verse-section">
+        <div class="container">
+            <div class="verse-card">
+                <span class="verse-tag">📖 Daily Scripture Reflection</span>
+                <p id="daily-verse-text" class="verse-text verse-loading">Fetching today's holy scripture...</p>
+                <span id="daily-verse-ref" class="verse-ref">— Scripture of the Day —</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Timings Quick Preview -->
+    <section id="service-times" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Worship Schedule</span>
+                <h2 class="section-title">Join Our Weekly Gatherings</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">We open our doors and hearts to everyone seeking spiritual growth, reverent worship, and meaningful fellowship.</p>
+            </div>
+            <div class="service-times-grid" id="home-services-grid">
+                <!-- Populated dynamically via js/pages/home.js -->
+                <div class="service-card"><p style="color: var(--text-muted);">Loading schedule...</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome from the Pastor -->
+    <section class="section-padding" style="background: var(--bg-parchment); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div>
+                    <span class="section-tag">Pastoral Greeting</span>
+                    <h2 class="section-title">Welcome to the MFC KIM Family</h2>
+                    <div class="section-divider" style="margin: 0 0 20px 0;"></div>
+                    <p id="home-pastor-summary" class="section-desc" style="margin-bottom: 24px; line-height: 1.8;">
+                        Our prayer is that as you walk through our doors or explore our online home, you will experience the undeniable presence of God and the warmth of genuine family. Whether you are seeking spiritual nourishment or a place to serve, there is a special home for you here at MFC KIM.
+                    </p>
+                    <a href="pastor.html" class="btn btn-maroon">Read Senior Pastor's Message</a>
+                </div>
+                <div>
+                    <img id="home-pastor-photo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Senior Pastor Portrait" style="border-radius: var(--radius-lg); border: 3px solid var(--gold-primary); box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Song Spotlight -->
+    <section class="featured-video-section" style="background: linear-gradient(135deg, rgba(44, 30, 20, 0.95), rgba(74, 25, 25, 0.95)); padding: 80px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color: var(--gold-light);">Sacred Melodies</span>
+                <h2 class="section-title" style="color: var(--text-light);">Featured Song Spotlight</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc" style="color: var(--text-light-muted);">Praise and worship are essential to our services. Access the lyrics and sheet music for our featured song below.</p>
+            </div>
+            <div id="home-featured-song" style="max-width: 600px; margin: 0 auto;">
+                <!-- Populated dynamically via js/pages/home.js -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="songs.html" class="btn btn-primary">Explore Song Lyric Library</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Church Blog Preview -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Spiritual Insights</span>
+                <h2 class="section-title">Latest From Our Ministry Blog</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Encouragement, theological reflections, and stories of community stewardship from our pastors and leaders.</p>
+            </div>
+            <div class="grid-3" id="home-blogs-grid">
+                <!-- Populated dynamically via js/pages/home.js -->
+                <div class="content-card"><div class="card-body"><p>Loading articles...</p></div></div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="blog.html" class="btn btn-secondary" style="border-color: var(--wood-dark); color: var(--wood-dark);">Read More Ministry Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <div id="shared-footer"></div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/pages/home.js"></script>
+</body>
+</html>
